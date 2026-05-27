@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>✨ 软萌时钟 | 可爱时间精灵 ✨</title>
+    <title>🍰 软萌时钟 | 可爱时间小站</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            user-select: none; /* 避免拖动文字让可爱感打折扣，不影响功能 */
+            user-select: none;
         }
 
         body {
@@ -18,13 +18,12 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Segoe UI', 'Quicksand', system-ui, -apple-system, 'Nunito', 'Poppins', 'Comic Neue', 'Comic Sans MS', 'Chalkboard SE', cursive;
+            font-family: 'Segoe UI', 'Quicksand', system-ui, -apple-system, 'Nunito', 'Poppins', 'Comic Neue', sans-serif;
             padding: 20px;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* 🌟 主卡片 */
         .cute-card {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(12px);
@@ -38,7 +37,6 @@
             border: 1px solid rgba(255, 210, 220, 0.7);
         }
 
-        /* 标题区 🎀 */
         .greeting-area {
             display: flex;
             justify-content: center;
@@ -49,14 +47,14 @@
         }
 
         .cute-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             filter: drop-shadow(2px 4px 8px rgba(255, 100, 150, 0.3));
             animation: bounceSoft 2s infinite ease;
             display: inline-block;
         }
 
         .greeting-text {
-            font-size: 1.9rem;
+            font-size: 1.6rem;
             font-weight: 600;
             background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4);
             background-clip: text;
@@ -66,7 +64,6 @@
             letter-spacing: 1px;
         }
 
-        /* 时钟主面板 */
         .clock-panel {
             background: #fffef7;
             border-radius: 70px;
@@ -76,22 +73,18 @@
             border: 1px solid #ffe2e8;
         }
 
-        /* 时间数字大号可爱 */
         .time-digits {
-            font-size: 5.2rem;
-            font-weight: 800;
+            font-size: 5rem;
+            font-weight: 700;
             font-family: 'Quicksand', 'Nunito', 'Segoe UI', monospace;
-            letter-spacing: 8px;
-            color: #e2738c;
-            background: linear-gradient(125deg, #f0938c, #ffb6c1);
+            letter-spacing: 6px;
+            background: linear-gradient(125deg, #e2738c, #ffb6c1);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
             text-shadow: 0 4px 15px #ffd0d8;
-            transition: 0.1s linear;
         }
 
-        /* 秒数特殊小点缀 */
         .seconds-highlight {
             font-size: 4rem;
             background: linear-gradient(135deg, #ffaa99, #ff8a9f);
@@ -109,11 +102,10 @@
             color: transparent;
         }
 
-        /* 日期区域 + 表情 */
         .date-area {
             margin-top: 20px;
-            font-size: 1.6rem;
-            font-weight: 600;
+            font-size: 1.3rem;
+            font-weight: 500;
             color: #b36b7e;
             background: rgba(255, 240, 245, 0.7);
             display: inline-block;
@@ -123,14 +115,6 @@
             box-shadow: inset 0 1px 3px #fff9, 0 4px 8px rgba(0, 0, 0, 0.02);
         }
 
-        .weekday-emoji {
-            margin-left: 8px;
-            font-size: 1.7rem;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        /* 可爱小动物&心情 */
         .mood-critter {
             margin-top: 20px;
             display: flex;
@@ -141,10 +125,9 @@
         }
 
         .critter {
-            font-size: 2.2rem;
             background: white;
             border-radius: 100px;
-            padding: 10px 18px;
+            padding: 8px 18px;
             box-shadow: 0 8px 14px rgba(255, 90, 120, 0.15);
             transition: transform 0.2s ease;
             display: inline-flex;
@@ -156,12 +139,12 @@
         }
 
         .critter span:first-child {
-            font-size: 2rem;
+            font-size: 1.5rem;
         }
 
         .critter-text {
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 0.9rem;
+            font-weight: 500;
             color: #d46b85;
         }
 
@@ -170,7 +153,6 @@
             background: #fff9fb;
         }
 
-        /* 装饰小元素 */
         .floating-bubbles {
             position: absolute;
             width: 100%;
@@ -190,16 +172,15 @@
             backdrop-filter: blur(2px);
         }
 
-        /* 动画 */
         @keyframes bounceSoft {
             0% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
+            50% { transform: translateY(-5px); }
             100% { transform: translateY(0px); }
         }
 
         @keyframes blinkLove {
-            0%, 100% { opacity: 1; text-shadow: 0 0 3px #ffb7c5; }
-            50% { opacity: 0.6; text-shadow: 0 0 8px #ff8aa7; }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
         @keyframes float {
@@ -207,56 +188,46 @@
             100% { transform: translateY(-40px) translateX(20px) rotate(8deg); }
         }
 
-        /* 响应式：手机也超可爱 */
         @media (max-width: 550px) {
             .cute-card {
                 padding: 1.3rem 1rem 2rem;
                 border-radius: 60px;
             }
             .time-digits {
-                font-size: 3rem;
+                font-size: 2.8rem;
                 letter-spacing: 4px;
             }
             .seconds-highlight {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
             }
             .greeting-text {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
             }
             .date-area {
-                font-size: 1.2rem;
+                font-size: 1rem;
                 padding: 6px 18px;
             }
             .critter {
-                font-size: 1.4rem;
-                padding: 6px 12px;
+                padding: 5px 14px;
             }
             .cute-icon {
-                font-size: 2.3rem;
+                font-size: 1.8rem;
             }
         }
 
-        /* 额外小装饰文本 */
         .footer-love {
             margin-top: 25px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #e9a5b5;
             display: flex;
             justify-content: center;
             gap: 12px;
             letter-spacing: 0.5px;
         }
-
-        button {
-            background: none;
-            border: none;
-            cursor: default;
-        }
     </style>
 </head>
 <body>
 
-<!-- 漂浮可爱气泡背景 -->
 <div class="floating-bubbles">
     <div class="bubble" style="width: 70px; height: 70px; left: 5%; bottom: 10%; animation-duration: 14s;"></div>
     <div class="bubble" style="width: 45px; height: 45px; left: 85%; top: 20%; animation-duration: 18s; animation-delay: -2s;"></div>
@@ -268,80 +239,60 @@
 </div>
 
 <main class="cute-card">
-    <!-- 打招呼区域 -->
     <div class="greeting-area">
-        <span class="cute-icon">🐣💖</span>
-        <h1 class="greeting-text">软乎乎的时光机</h1>
-        <span class="cute-icon">🍰🐇</span>
+        <span class="cute-icon">🌸</span>
+        <h1 class="greeting-text">时光小站</h1>
+        <span class="cute-icon">🍰</span>
     </div>
 
-    <!-- 时钟主视觉 -->
     <div class="clock-panel">
         <div class="time-digits" id="clockDisplay">
-            <!-- 动态js填充时:分:秒 -->
             00:00:00
         </div>
-        <!-- 小提示趣味点 -->
-        <div style="margin-top: 12px; font-size: 0.9rem; color: #f098aa; letter-spacing: 1px;">
-            ✨ 每分每秒 都是甜甜的 ✨
+        <div style="margin-top: 12px; font-size: 0.8rem; color: #f098aa;">
+            🩷 此刻时间 🩷
         </div>
     </div>
 
-    <!-- 日期区域 + 小表情包 -->
     <div class="date-area" id="dateInfo">
-        <!-- 日期和星期几动态渲染 -->
-        加载小星星...
+        加载中...
     </div>
 
-    <!-- 心情小动物跟随时间变化 -->
     <div class="mood-critter">
         <div class="critter">
             <span>🐱</span>
-            <span class="critter-text" id="morningText">早安喵</span>
+            <span class="critter-text" id="morningText">早安</span>
         </div>
         <div class="critter">
-            <span>🍬</span>
-            <span class="critter-text">滴答小甜心</span>
+            <span>⏰</span>
+            <span class="critter-text">滴答滴答</span>
         </div>
         <div class="critter" id="timeCritter">
-            <span>⏰✨</span>
-            <span class="critter-text" id="dynamicPhrase">现在是魔法时间</span>
+            <span>💖</span>
+            <span class="critter-text" id="dynamicPhrase">好时光</span>
         </div>
     </div>
 
     <div class="footer-love">
-        <span>❤️ 每一刻都是小确幸 ❤️</span>
-        <span>🐻‍❄️ 咕噜咕噜~</span>
+        <span>❤️ 每一天都美好 ❤️</span>
     </div>
 </main>
 
 <script>
-    // 让可爱的时钟无缝更新
     function updateClock() {
         const now = new Date();
         
-        // 获取时、分、秒 (24小时制，保持可爱清晰)
         let hours = now.getHours();
         let minutes = now.getMinutes();
         let seconds = now.getSeconds();
         
-        // 格式化两位数
         const formattedHours = hours.toString().padStart(2, '0');
         const formattedMinutes = minutes.toString().padStart(2, '0');
         const formattedSeconds = seconds.toString().padStart(2, '0');
         
-        // 构造完整时间字符串，但为了对秒做特殊样式（单独highligh可增加可爱感)
-        // 我们使用整体时间带冒号，但是让秒钟单独加一点渐变效果，需要拆分显示
-        // 为了使视觉更萌，我们直接在display里使用完整时间串，但通过内部样式可以，
-        // 不过为了让秒闪更明显，我们重新组织DOM结构？ 但是为了保持优雅，我们保持原有结构, 
-        // 同时可改变colon眨眼效果, 将冒号单独提取难度较大, 但我们可以用 innerHTML 的方式让秒数独立span,
-        // 同时保留冒号动画（更好的可爱效果）
-        // 重构clockDisplay: 制作成 时:分:秒 且秒部分带高亮渐变
-        
         const timeString = `${formattedHours}<span class="colon-blink">:</span>${formattedMinutes}<span class="colon-blink">:</span><span class="seconds-highlight">${formattedSeconds}</span>`;
         document.getElementById('clockDisplay').innerHTML = timeString;
         
-        // 更新日期 + 星期
         const year = now.getFullYear();
         const month = now.getMonth() + 1;
         const day = now.getDate();
@@ -349,99 +300,74 @@
         const weekdayIndex = now.getDay();
         const weekdayName = weekdays[weekdayIndex];
         
-        // 可爱的星期几对应小表情
         let weekdayEmoji = '';
         switch(weekdayIndex) {
-            case 0: weekdayEmoji = '☁️🍰'; break; // 周日慵懒
-            case 1: weekdayEmoji = '📖🍀'; break;
-            case 2: weekdayEmoji = '🍬🐣'; break;
-            case 3: weekdayEmoji = '🌸🐱'; break;
-            case 4: weekdayEmoji = '✨🎀'; break;
-            case 5: weekdayEmoji = '🍭🎈'; break;
-            case 6: weekdayEmoji = '🧸💤'; break;
+            case 0: weekdayEmoji = '☁️'; break;
+            case 1: weekdayEmoji = '📖'; break;
+            case 2: weekdayEmoji = '🍬'; break;
+            case 3: weekdayEmoji = '🌸'; break;
+            case 4: weekdayEmoji = '✨'; break;
+            case 5: weekdayEmoji = '🍭'; break;
+            case 6: weekdayEmoji = '🧸'; break;
             default: weekdayEmoji = '🌟';
         }
         
-        const dateString = `${year}.${month}.${day}  ${weekdayName} ${weekdayEmoji}`;
+        const dateString = `${year}年 ${month}月 ${day}日  ${weekdayName} ${weekdayEmoji}`;
         document.getElementById('dateInfo').innerHTML = dateString;
         
-        // 根据不同时间段更新问候语和动物心情 (让整个页面更生动可爱)
         const hour = hours;
-        let greetingMsg = '';
         let morningTextContent = '';
         let dynamicCritterPhrase = '';
-        let critterIcon = ''; // 额外改变第三个critter的小表情
+        let critterIcon = '';
         
         if (hour >= 5 && hour < 9) {
-            greetingMsg = '🌼 早安小太阳！新的一天也要元气满满 🌼';
-            morningTextContent = '☀️ 活力早晨';
-            dynamicCritterPhrase = '啾啾！早餐要吃饱饱～';
-            critterIcon = '🐣🍳';
+            morningTextContent = '☀️ 早上好';
+            dynamicCritterPhrase = '新的一天开始啦';
+            critterIcon = '🌅';
         } else if (hour >= 9 && hour < 12) {
-            greetingMsg = '📚 上午好呀，你是最棒的小可爱 🌟';
-            morningTextContent = '🍎 认真时光';
-            dynamicCritterPhrase = '加油加油！小星星为你打call ✨';
-            critterIcon = '🦊✏️';
+            morningTextContent = '📚 上午好';
+            dynamicCritterPhrase = '元气满满';
+            critterIcon = '⭐';
         } else if (hour >= 12 && hour < 14) {
-            greetingMsg = '🍛 午安～ 记得午休一会儿，养足精神哟 💤';
-            morningTextContent = '🥗 午憩片刻';
-            dynamicCritterPhrase = '呼噜～ 小瞌睡虫来啦 🧸';
-            critterIcon = '🐻‍❄️💤';
+            morningTextContent = '🍚 中午好';
+            dynamicCritterPhrase = '好好吃饭';
+            critterIcon = '🍜';
         } else if (hour >= 14 && hour < 18) {
-            greetingMsg = '🍰 下午茶时间，给自己一点甜头吧 🧁';
-            morningTextContent = '🍬 活力下午';
-            dynamicCritterPhrase = '咕噜咕噜～ 小松鼠也想吃点心 🐿️🥜';
-            critterIcon = '🐿️🍪';
+            morningTextContent = '🍵 下午好';
+            dynamicCritterPhrase = '悠闲时刻';
+            critterIcon = '🍰';
         } else if (hour >= 18 && hour < 21) {
-            greetingMsg = '🌙 傍晚好～ 今天也辛苦啦，抱抱自己 🫂';
-            morningTextContent = '🌆 温柔暮色';
-            dynamicCritterPhrase = '晚霞棉花糖，心情变粉红🍬';
-            critterIcon = '🦋🌅';
+            morningTextContent = '🌙 晚上好';
+            dynamicCritterPhrase = '放松一下';
+            critterIcon = '🌆';
         } else {
-            greetingMsg = '🌛 夜深啦，做个好梦，明天又是可爱的一天 💫';
-            morningTextContent = '🌜 星光晚安';
-            dynamicCritterPhrase = '月亮小兔陪你入睡 🐇🌙';
-            critterIcon = '🐇⭐';
+            morningTextContent = '🌜 夜深了';
+            dynamicCritterPhrase = '晚安好梦';
+            critterIcon = '🌙';
         }
         
-        // 更新左侧critter文字（早安喵模块）
         const morningSpan = document.getElementById('morningText');
         if (morningSpan) morningSpan.innerText = morningTextContent;
         
-        // 更新第三个动态短语和icon
         const dynamicPhraseSpan = document.getElementById('dynamicPhrase');
         const timeCritterDiv = document.getElementById('timeCritter');
         if (dynamicPhraseSpan) dynamicPhraseSpan.innerText = dynamicCritterPhrase;
         if (timeCritterDiv) {
-            // 保留内部样式结构，更新前面的图标
             const firstSpan = timeCritterDiv.querySelector('span:first-child');
-            if (firstSpan) {
-                // 按照不同时间段改变小图标
-                if (critterIcon) firstSpan.innerHTML = critterIcon;
-                else firstSpan.innerHTML = '⏰✨';
-            }
+            if (firstSpan && critterIcon) firstSpan.innerHTML = critterIcon;
         }
-        
-        // 额外: 更改问候区域的小标题微调，但不是必须，但能让卡片互动
-        // 也可以改greeting-text的文字？可以但保持稳定性，我们改变greeting-area里面的小icon浮动
-        // 加一点小俏皮: 让气泡背景随机生成感觉(不做太多消耗)
-        // 更可爱: 根据秒数改变critter小表情眨眼频率（伪）
-        // 为了好玩，让critter里的第二个表情随机波动简单而已（无妨）
     }
     
-    // 再次增强趣味：每分钟或者每秒钟稍微改变漂浮气泡的颜色微调（不加复杂逻辑,但我们可以动态根据时间的奇偶秒改变footer爱心发光)
     function extraSparkle() {
         const nowSec = new Date().getSeconds();
         const footer = document.querySelector('.footer-love');
         if (footer) {
             if (nowSec % 2 === 0) {
                 footer.style.opacity = '1';
-                footer.style.transition = '0.2s';
             } else {
                 footer.style.opacity = '0.85';
             }
         }
-        // 让可爱的clock面板冒泡星星闪烁效果，随意增加glow
         const clockPanel = document.querySelector('.clock-panel');
         if (clockPanel) {
             const intensity = (Math.sin(Date.now() / 800) * 0.05 + 0.95);
@@ -449,72 +375,37 @@
         }
     }
     
-    // 补充更可爱一点的随机心情短语切换 (每隔20秒换一下critter的额外文本，但不影响主要)
-    let phraseInterval;
-    const cutePhrases = [
-        '🎈 咕噜噜时间魔法', '🐣 一秒比一秒可爱', '🍰 抓住小确幸', '🌸 滴滴答答 好运来', 
-        '🌟 今天是草莓味', '🐱 喵喵时钟~', '🍬 软绵绵时刻', '🐰 耳朵竖起来听时间', '✨ 被时光温柔以待'
-    ];
-    function rotateDynamicExtraPhrase() {
-        const extraElem = document.getElementById('dynamicPhrase');
-        if (extraElem && extraElem.innerText) {
-            // 为了避免覆盖时间段短语，我们做一个循环切换的二级小浮动内容？但时间段主要短语覆盖优先级更高，
-            // 但是为了更有趣，我们可以在保持主短语附近添加一个可爱后缀，但为避免冲突，我们在updateClock强制更新，那么周期性切换会覆盖update的主逻辑
-            // 所以更好的方式：额外添加另一个随机小提示，不覆盖原本的时间段短语，但是会让人觉得更活泼，不过也有趣。决定优化: 保留时间段的动态phrase，
-            // 但是额外再加一个footer的下标动态变化，或者critter中第二块随机变化
-            // 我们让第三个critter的第二个文本每隔10秒加一个可爱后缀，但是保留时间段前缀不丢失？但时间段更新优先级更重要，所以单独随机只在完全空闲不? 不推荐破坏主逻辑
-            // 其实我们可以在时间段phrase后加闪烁的emoji, 我们可以在updateClock时保留主phrase前加随机小符号来额外
-        }
-        // 为了不冲突，我们在footer部分加跑马灯式的心情（微小改变不影响体验）
-        const footerSpan = document.querySelector('.footer-love span:first-child');
-        if (footerSpan && Math.random() < 0.3) {
-            // 平滑展示可爱小尾巴
-        }
-    }
-    
-    // 启动时钟定时器 (每秒更新)
-    let timer = setInterval(() => {
-        updateClock();
-        extraSparkle();
-    }, 1000);
-    
-    // 额外让泡泡背景的位置缓慢漂移 (提供生动感)
     let bubbleElements = document.querySelectorAll('.bubble');
     function gentleDrift() {
         bubbleElements.forEach((bubble, idx) => {
-            let currentLeft = parseFloat(bubble.style.left) || parseFloat(getComputedStyle(bubble).left);
-            let currentBottom = parseFloat(bubble.style.bottom) || parseFloat(getComputedStyle(bubble).bottom);
-            if (isNaN(currentLeft)) currentLeft = 5;
-            if (isNaN(currentBottom)) currentBottom = 10;
-            // 轻微移动 营造梦幻感
             const shiftX = (Math.sin(Date.now() / 3000 + idx) * 0.5);
             const shiftY = (Math.cos(Date.now() / 4000 + idx) * 0.3);
             bubble.style.transform = `translate(${shiftX}px, ${shiftY}px)`;
         });
     }
     
-    // 通过requestAnimationFrame使气泡飘动更平滑
-    let driftActive = true;
     function animateDrift() {
-        if (!driftActive) return;
         gentleDrift();
         requestAnimationFrame(animateDrift);
     }
     animateDrift();
     
-    // 初始化立即显示，避免空白
+    setInterval(() => {
+        updateClock();
+        extraSparkle();
+    }, 1000);
+    
     updateClock();
     extraSparkle();
     
-    // 可选: 增加鼠标悬浮趣味效果到卡片
     const card = document.querySelector('.cute-card');
     if (card) {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
-            const xMove = (x / rect.width - 0.5) * 8;
-            const yMove = (y / rect.height - 0.5) * 8;
+            const xMove = (x / rect.width - 0.5) * 6;
+            const yMove = (y / rect.height - 0.5) * 6;
             card.style.transform = `perspective(800px) rotateX(${-yMove * 0.5}deg) rotateY(${xMove * 0.5}deg) translateY(-2px)`;
         });
         card.addEventListener('mouseleave', () => {
@@ -523,12 +414,6 @@
         });
     }
     
-    // 确保星期和日期里的emoji也适配
-    // 将colon动画融入生活
-    // 最后再加个小小的控制台彩蛋 🥚
-    console.log("%c✨ 欢迎光临软糯时间小屋 ✨ 每一天都要甜甜的噢 🍬🐈", "color: #ff8aa7; font-size: 16px; font-weight: bold; font-family: 'Comic Neue';");
-    
-    // 补一个动态背景更温柔：根据小时改变body渐变 (背景轻微渐变变化)
     function subtleBgShift() {
         const hour = new Date().getHours();
         let gradientFrom, gradientTo;
@@ -548,7 +433,9 @@
         document.body.style.background = `linear-gradient(145deg, ${gradientFrom} 0%, ${gradientTo} 100%)`;
     }
     subtleBgShift();
-    setInterval(subtleBgShift, 60000); // 每分钟更新一次背景氛围感
+    setInterval(subtleBgShift, 60000);
+    
+    console.log("✨ 时光小站 ✨");
 </script>
 </body>
 </html>
